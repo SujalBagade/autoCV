@@ -1,7 +1,7 @@
+\documentclass[a4paper,10pt]{article}
 
-\documentclass[a4paper,8pt]{article}
-
-\usepackage{parskip} 
+% Packages
+\usepackage{parskip}
 \usepackage{hologo}
 \usepackage{fontspec}
 \usepackage{hyperref}
@@ -10,182 +10,133 @@
     linkcolor=blue,
     urlcolor=blue
 }
-
-
-%other packages for formatting
-\RequirePackage{color}
-\RequirePackage{graphicx}
+\usepackage{color}
+\usepackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9, top=.4in, bottom=.4in]{geometry}
-
-%tabularx environment
+\usepackage[scale=0.9, top=0.4in, bottom=0.4in]{geometry}
 \usepackage{tabularx}
-
-%for lists within experience section
 \usepackage{enumitem}
-
-% centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
-
-%to prevent spillover of tabular into next pages
 \usepackage{supertabular}
-\usepackage{tabularx}
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.42\textwidth}
-
-%custom \section
-\usepackage{titlesec}				
+\usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
-
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{1pt}{2pt}{2pt}
-
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
-%Setup hyperref package, and colours for links
-\usepackage[unicode, draft=false]{hyperref}
-\color[HTML]{110223}%{1C033C}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
-
-%for social icons
+\usepackage[style=authoryear,sorting=ynt,maxbibnames=2]{biblatex}
 \usepackage{fontawesome5}
-% \usepackage{times}
-
-% For underline
 \usepackage[normalem]{ulem}
 
-\setmainfont{Arial}  % Set it to whatever you like
+\setmainfont{Arial}
+\color[HTML]{110223}
+\addbibresource{citations.bib}
 
+% Customizations
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.42\textwidth}
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{1pt}{2pt}{2pt}
+\setlength\bibitemsep{1em}
+
+% Document
 \begin{document}
 \fontsize{10}{12}\selectfont
+\pagestyle{empty}
 
-
-% non-numbered pages
-\pagestyle{empty} 
-
-\begin{tabularx}{\linewidth}{@{} C @{}}
+% Name and Contact
+\begin{tabularx}{\linewidth}{@{}C@{}}
 \Huge{Sujal Bagade} \\[6pt]
 \end{tabularx}
 
-\begin{tabularx}{\linewidth}{@{} C @{} C @{} C}
-{{\raisebox{-0.05\height}{\faEnvelope} sujalbagade123@gmail.com}}  \hspace{0.2cm}
-{{\raisebox{-0.05\height}{\faMobile} +91 9921872905}} \hspace{0.2cm}
-{{{\raisebox{-0.05\height}{\faLinkedin} www.linkedin.com/in/sujalbagade
-}}}
+\begin{tabularx}{\linewidth}{@{}C@{}C@{}C@{}}
+\href{mailto:sujalbagade123@gmail.com}{\raisebox{-0.05\height}{\faEnvelope} sujalbagade123@gmail.com} \hspace{0.2cm}
+\raisebox{-0.05\height}{\faMobile} +91 9921872905 \hspace{0.2cm}
+\href{https://www.linkedin.com/in/sujalbagade}{\raisebox{-0.05\height}{\faLinkedin} linkedin.com/in/sujalbagade}
 \end{tabularx}
 
-%EDUCATION
-\section{\textbf{EDUCATION}}
-\begin{tabularx}{\linewidth}{@{} X r @{}}
-    \textbf{Dr. D Y PATIL INSTITUTE OF TECHNOLOGY} & \textbf{Dec 2021 - June 2025} \\
-    BE in Computer Engineering  Batch: 2025 \hspace{0.2cm} CGPA: 8.9/10 \\
-    Honours in Data Science\\
-    \textbf{MATOSHRI JUNIOR COLLEGE} & \textbf{Aug 2019 - Jul 2021} \\
-    Higher Secondary Education \hspace{0.2cm}  percentage: 89 \\
-    \\
-\end{tabularx}
-
-%SKILLS
-\section{\textbf{SKILLS}}
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
-        \item Certifications:
-        Google Cloud Fundamentals Core Infrastructure By Google Cloud (\href{https://www.coursera.org/account/accomplishments/verify/FV8DSDL7DVVZ?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course}{Link}), 
-        Back-End Development by Meta (\href{https://www.coursera.org/account/accomplishments/verify/9S7N4TJ68C98?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course}{Link}), 
-        Databricks Accredited Generative AI Fundamentals (\href{https://credentials.databricks.com/c4992167-4627-41fd-998f-1a64555d43ff#acc.gc3NZh2P}{Link}).
-        \item Technical Skills: C, C++, Java, Python, HTML, CSS, JavaScript, React, Solidity, Docker.
-        \item Tools: Google Cloud Console, Amazon Web Services, Git, Github, Postman, Ganache, Truffle, Canva, Figma.
-        \item Others: Leadership, Management, Communication, Problem Solving.
-        \\
-    \end{itemize}
-\end{minipage}
-
-
-
-
-%EXPERIENCE
-\section{\textbf{EXPERIENCE}}
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Software Engineer}- XDE Studios \hfill \textbf{Jan 2024 - present} \\[4pt]
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
-        \item Developed and managed machine learning models, AI solutions, and retrieval-augmented generation (RAG) systems to optimize product functionality and drive successful launches. Led the creation of an NFT platform utilizing blockchain technology, Solidity, and React, which enabled seamless customization and dynamic NFT generation. Developed advanced systems leveraging FastAPI, OpenCV, PaddleOCR, and React for efficient data processing and visualization.
-        \\
-    \end{itemize}
-\end{minipage}
-\end{tabularx}
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Blockchain Lead}- Google Developer Students Club \hfill \textbf{October 2024 - present} \\[4pt]
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
-        \item Conducted workshops for 100+ students on decentralized apps, smart contracts, and NFTs.
-        \item Guided development of real-world blockchain projects like DeFi and tokenization. 
-        \\
-    \end{itemize}
-\end{minipage}
-\end{tabularx}
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Secretary}- Association of Computer Engineering Students \hfill \textbf{June 2023 - Present} \\[4pt]
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
-        \item Contributed to advancing the club's mission of promoting technical excellence among peers.
-        \item Established and maintained effective communication channels with club members and external stakeholders. 
-
-    \end{itemize}
-\end{minipage}
-\end{tabularx}
-
-
-
-% ACADEMIC PROJECTS
-\section{\textbf{PROJECTS}}
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{{PORTVISION}} \\[4pt]
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
-        \item Built a camera control system to streamline operations at shipping ports, enabling snapshot capture, XML-based camera settings, and user-friendly interactions for container monitoring. 
-        \item Leveraged FastAPI for backend APIs, OpenCV and PaddleOCR for image processing and text recognition, React with Material UI for a responsive frontend, and HTTP Digest Authentication for secure camera access.
-    \end{itemize}
-\end{minipage}
-\end{tabularx}
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{{SCALP-SENSE}} \\[4pt]
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
-        \item Developed a machine learning model to analyze various scalp conditions using TensorFlow for model training.
-        \item Deployed the solution with Python, React, and FlaskAPI, enabling accurate scalp condition detection and showcasing practical AI applications in health diagnostics.
-    \end{itemize}
-\end{minipage}
-\end{tabularx}
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{{RAGBOT}} \\[4pt]
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
-        \item Developed a chatbot platform utilizing retrieval-augmented generation (RAG) and implemented vectorized embeddings for enhanced response accuracy and speed.
-        \item Built with Python, React, and FlaskAPI, and deployed on AWS EC2 to ensure scalability and reliable performance.
+% Education
+\section{\textbf{Education}}
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+\textbf{Dr. D Y Patil Institute of Technology} & \textbf{Dec 2021 -- June 2025} \\
+BE in Computer Engineering | CGPA: 8.9/10 \\
+Honours in Data Science \\
 \\
-    \end{itemize}
-\end{minipage}
-\end{tabularx}
-% ACHIEVEMENTS
-\section{\textbf{ACHIEVEMENTS}}
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
-        \item All India Blockchain Alliance Hackathon 2023 Winner (\href{https://drive.google.com/file/d/1Z7MJC7KW8R31a5CgrEwE7D2boVf6nebi/view}{Link})
-        \item 120+ Google Cloud Skills Boost Labs Completed (\href{https://www.cloudskillsboost.google/public_profiles/092c7019-a54d-4eb6-9c63-cc42c4bc8909}{Link})
-        \item 9 Google Cloud Badges (\href{https://www.cloudskillsboost.google/public_profiles/092c7019-a54d-4eb6-9c63-cc42c4bc8909}{Link})
-        \item Runner up: Actual01 Python Hackathon.
-        \item Runner up: DevClash (Web3 Hackathon).
-        \item Smart India Hackathon (Internal Hackathon Rank 7).
-    \end{itemize}
-\end{minipage}
+\textbf{Matoshri Junior College} & \textbf{Aug 2019 -- Jul 2021} \\
+Higher Secondary Education | Percentage: 89\% \\
 \end{tabularx}
 
+% Skills
+\section{\textbf{Skills}}
+\begin{itemize}[nosep,leftmargin=*]
+    \item \textbf{Certifications}: 
+    \href{https://www.coursera.org/account/accomplishments/verify/FV8DSDL7DVVZ}{Google Cloud Fundamentals (Google Cloud)}, 
+    \href{https://www.coursera.org/account/accomplishments/verify/9S7N4TJ68C98}{Back-End Development (Meta)}, 
+    \href{https://credentials.databricks.com/c4992167-4627-41fd-998f-1a64555d43ff#acc.gc3NZh2P}{Databricks Generative AI Fundamentals}.
+    \item \textbf{Technical Skills}: C, C++, Java, Python, HTML, CSS, JavaScript, React, Solidity, Docker.
+    \item \textbf{Tools}: Google Cloud Console, AWS, Git, GitHub, Postman, Ganache, Truffle, Canva, Figma.
+    \item \textbf{Others}: Leadership, Management, Communication, Problem Solving.
+\end{itemize}
+
+% Experience
+\section{\textbf{Experience}}
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+\textbf{Software Engineer} -- XDE Studios & \textbf{Jan 2024 -- Present} \\
+\end{tabularx}
+\begin{itemize}[nosep,leftmargin=*]
+    \item Developed and managed ML models, AI solutions, and RAG systems to optimize product functionality.
+    \item Led creation of an NFT platform using Blockchain, Solidity, and React.
+    \item Built data processing and visualization systems with FastAPI, OpenCV, PaddleOCR, and React.
+\end{itemize}
+
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+\textbf{Blockchain Lead} -- Google Developer Students Club & \textbf{Oct 2024 -- Present} \\
+\end{tabularx}
+\begin{itemize}[nosep,leftmargin=*]
+    \item Conducted workshops for 100+ students on DApps, smart contracts, and NFTs.
+    \item Guided development of DeFi and tokenization projects.
+\end{itemize}
+
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+\textbf{Secretary} -- Association of Computer Engineering Students & \textbf{June 2023 -- Present} \\
+\end{tabularx}
+\begin{itemize}[nosep,leftmargin=*]
+    \item Advanced the club's mission of promoting technical excellence.
+    \item Maintained communication with members and external organizations.
+\end{itemize}
+
+% Projects
+\section{\textbf{Projects}}
+\begin{tabularx}{\linewidth}{@{}X@{}}
+\textbf{PORTVISION} \\
+\end{tabularx}
+\begin{itemize}[nosep,leftmargin=*]
+    \item Built a camera control system for shipping ports: snapshot capture, XML camera settings, container monitoring.
+    \item Tech stack: FastAPI, OpenCV, PaddleOCR, React, Material UI, HTTP Digest Authentication.
+\end{itemize}
+
+\begin{tabularx}{\linewidth}{@{}X@{}}
+\textbf{SCALP-SENSE} \\
+\end{tabularx}
+\begin{itemize}[nosep,leftmargin=*]
+    \item Developed a ML model to detect scalp conditions using TensorFlow.
+    \item Deployed solution using Python, React, FlaskAPI.
+\end{itemize}
+
+\begin{tabularx}{\linewidth}{@{}X@{}}
+\textbf{RAGBOT} \\
+\end{tabularx}
+\begin{itemize}[nosep,leftmargin=*]
+    \item Created a chatbot platform with Retrieval-Augmented Generation (RAG) and vectorized storage.
+    \item Built with Python, React, FlaskAPI; deployed on AWS EC2.
+\end{itemize}
+
+% Achievements
+\section{\textbf{Achievements}}
+\begin{itemize}[nosep,leftmargin=*]
+    \item Winner: All India Blockchain Alliance Hackathon 2023 (\href{https://drive.google.com/file/d/1Z7MJC7KW8R31a5CgrEwE7D2boVf6nebi/view}{Link}).
+    \item Completed 120+ Google Cloud Skills Boost Labs (\href{https://www.cloudskillsboost.google/public_profiles/092c7019-a54d-4eb6-9c63-cc42c4bc8909}{Link}).
+    \item 9 Google Cloud Badges Earned (\href{https://www.cloudskillsboost.google/public_profiles/092c7019-a54d-4eb6-9c63-cc42c4bc8909}{Link}).
+    \item Runner-up: Actual01 Python Hackathon.
+    \item Runner-up: DevClash (Web3 Hackathon).
+    \item Rank 7 (Internal Hackathon): Smart India Hackathon.
+\end{itemize}
 
 \end{document}
