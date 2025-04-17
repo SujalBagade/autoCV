@@ -20,7 +20,8 @@ jobs:
         with:
           root_file: ${{ env.FILE }}
           working_directory: ${{ env.DIR }}
-          compiler: xelatex  # <--- IMPORTANT: Tell it to use xelatex!
+          compiler: latexmk
+          args: -xelatex # <--- IMPORTANT: Tell it to use xelatex!
 
       - name: Move output PDF to artifacts folder
         run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
