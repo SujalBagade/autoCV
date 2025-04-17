@@ -12,12 +12,6 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v4
       
-      - name: Install required fonts
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y fonts-liberation ttf-mscorefonts-installer fontconfig
-          sudo fc-cache -fv
-      
       - name: Compile LaTeX document
         uses: dante-ev/latex-action@latest
         with:
@@ -25,7 +19,8 @@ jobs:
           working_directory: ${{ env.DIR }}
           compiler: latexmk
           args: -xelatex
-          extra_system_packages: "msttcorefonts"
+          extra_system_packages: "ttf-mscorefonts-installer"
+          extra_font_packages: "texlive-fonts-recommended texlive-fonts-extra"
       
       - name: Move output PDF to artifacts folder
         run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
