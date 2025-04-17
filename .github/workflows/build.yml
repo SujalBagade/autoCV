@@ -12,6 +12,17 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v4
       
+      # First, modify the LaTeX file to use a different font
+      - name: Modify LaTeX to use available fonts
+        run: |
+          if [ -f ${{ env.DIR }}/${{ env.FILE }}.tex ]; then
+            # Replace Arial with Liberation Sans (available in TeX Live)
+            sed -i 's/\\setmainfont{Arial}/\\setmainfont{Liberation Sans}/g' ${{ env.DIR }}/${{ env.FILE }}.tex
+            # Alternative replacements if needed
+            sed -i 's/\\setsansfont{Arial}/\\setsansfont{Liberation Sans}/g' ${{ env.DIR }}/${{ env.FILE }}.tex
+            sed -i 's/\\setmonofont{Arial}/\\setmonofont{Liberation Sans}/g' ${{ env.DIR }}/${{ env.FILE }}.tex
+          fi
+      
       - name: Compile LaTeX document
         uses: dante-ev/latex-action@latest
         with:
@@ -19,7 +30,7 @@ jobs:
           working_directory: ${{ env.DIR }}
           compiler: latexmk
           args: -xelatex
-          extra_system_packages: "ttf-mscorefonts-installer"
+          extra_system_packages: "fonts-liberation"
           extra_font_packages: "texlive-fonts-recommended texlive-fonts-extra"
       
       - name: Move output PDF to artifacts folder
